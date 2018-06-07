@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 100%;
+            padding: 0;
+            font-family: "Roboto", sans-serif, Helvetica;
+            font-stretch: condensed;
+            font-weight: lighter;
+            font-size: 1em;
+            line-height: 1.25em;
+            overflow: hidden !important;
+        }
+
+        #chat-board {
+            width: 100%;
+            min-height: 100vh;
+            box-shadow: 0 2px 4px 0 #999999;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 17px;
+            font-family: 'arial';
+            display: flex;
+            flex-flow: row wrap;
+            text-align: center;
+            overflow: hidden !important;
+        }
+
+        #chat-board > * {
+            padding: 20px;
+            flex: 1 100%;
+        }
+
+        #chat-board > .toolbar {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            max-height: 40px;
+            margin: 0;
+            background: deepskyblue;
+            color: #ffffff;
+            order: 1;
+            box-shadow: 0 1px 4px -2px #444444;
+        }
+
+        .toolbar > .title {
+            padding: 0 30%;
+            font-size: 1em;
+            text-align: center;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+
+        /*conversation class*/
+
+        .conversation {
+            margin-top: 50px;
+            text-align: left;
+            order: 2;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow-y: scroll;
+        }
+
+        .footer {
+            background: #ffffff;
+            position: fixed;
+            border: 1px solid #dddddd;
+            order: 3;
+            bottom: 0;
+            width: 100%;
+            height: 45px;
+            font-size: 1.25em;
+            box-shadow: 0 -1px 4px -2px #444444;
+        }
+
+        .footer > .input-message > input {
+            width: 75%;
+            padding: 15px 0;
+            text-indent: 15px;
+            outline: none;
+            border: 1px solid lightgray;
+            border-radius: 30px;
+            height: 15px;
+        }
+        .footer > .input-message > button,
+        .footer > .input-message > .image {
+            width: 5%;
+            padding: 15px 0;
+            border: 0;
+            outline: none;
+            position: relative;
+            top: -5px;
+            cursor: pointer;
+        }
+        .footer > .input-message > button {
+            background: url("https://www.applozic.com/assets/resources/lib/images/icon-send.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 40px;
+
+        }
+        .footer > .input-message > .image {
+            background: url("http://www.miniature13.com/img/icon/galleryIcon.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 40px;
+        }
+
+        .left-message {
+            display: flex;
+            flex-flow: row wrap;
+            text-align: center;
+        }
+
+        .left-message > .message {
+            background: lightgray;
+            padding: 15px;
+            border-radius: 15px 15px 15px 0;
+        }
+
+        .right-message {
+            display: flex;
+            flex-flow: row wrap;
+            text-align: center;
+            justify-content: flex-end;
+        }
+
+        .right-message > .message {
+            background: deepskyblue;
+            padding: 15px;
+            border-radius: 15px 15px 0 15px;
+            color: #ffffff;
+        }
+
+        .left-message:last-child ,
+        .right-message:last-child {
+            margin-bottom: 170px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-board">
+    <div class="toolbar">
+        <span>Sokha</span>
+        <span class="title">Chat Room</span>
+        <span>Anonymous</span>
+    </div>
+    <div class="conversation">
+
+        <div class="left-message">
+            <p class="message">
+                This is my message
+            </p>
+
+        </div>
+
+        <div class="right-message">
+            <p class="message">
+                This is your message
+            </p>
+            <!--<img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100" alt="Your Photo" class="avatar">-->
+        </div>
+
+        <div class="left-message">
+            <p class="message">
+                This is my message
+            </p>
+
+        </div>
+        <div class="left-message">
+            <p class="message">
+                This is my message
+            </p>
+
+        </div>
+
+        <div class="right-message">
+            <p class="message">
+                This is your message
+            </p>
+            <!--<img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100" alt="Your Photo" class="avatar">-->
+        </div>
+
+        <div class="right-message">
+            <p class="message">
+                This is your message
+            </p>
+            <!--<img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100" alt="Your Photo" class="avatar">-->
+        </div>
+
+        <div class="left-message">
+            <p class="message">
+                This is my message 1
+            </p>
+
+        </div>
+        <div class="left-message">
+            <p class="message">
+                This is my message 2
+            </p>
+
+        </div>
+
+        <div class="right-message">
+            <p class="message">
+                This is your message
+            </p>
+            <!--<img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100" alt="Your Photo" class="avatar">-->
+        </div>
+
+        <div class="right-message">
+            <p class="message">
+                This is your message
+            </p>
+            <!--<img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100" alt="Your Photo" class="avatar">-->
+        </div>
+
+        <div class="right-message">
+            <p class="message">
+                This is your message
+            </p>
+            <!--<img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100" alt="Your Photo" class="avatar">-->
+        </div>
+
+        <div class="left-message">
+            <p class="message">
+                This is my message
+            </p>
+
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <span class="input-message">
+            <button id="#" class="image" type="button"></button>
+        </span>
+        <span class="input-message">
+            <input type="text" id="textMessage" placeholder="Type Message Here...">
+        </span>
+        <span class="input-message">
+            <button id="sendMessage" type="button"></button>
+        </span>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<!--<script>-->
+<!--const socket = io.connect("http://localhost:3000");-->
+
+<!--btn.addEventListener('click', () => {-->
+<!--socket.emit("chat", {-->
+<!--message: messageText.value-->
+<!--});-->
+<!--});-->
+<!--socket.on('chat', data => {-->
+<!--var p = document.createElement("p");-->
+<!--var text = document.createTextNode(data.message);-->
+<!--p.appendChild(text);-->
+<!--message.append(p);-->
+<!--});-->
+<!--</script>-->
+</body>
+</html>
